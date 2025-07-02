@@ -5,68 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PURA LUMBRE</title>
     <link href="./dist/output.css" rel="stylesheet" />
+    <script defer>
+      // Toggle navbar menu
+      function toggleMenu() {
+        const nav = document.getElementById("mobile-menu");
+        nav.classList.toggle("hidden");
+      }
+    </script>
   </head>
   <body class="bg-black text-white font-sans">
 
     <!-- Navbar -->
-    <header class="flex justify-between items-center p-6 border-b border-white relative">
-  <h1 class="text-2xl font-bold">PURA LUMBRE</h1>
+    <header class="border-b border-white">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo / Brand -->
+        <h1 class="text-2xl font-bold">PURA LUMBRE</h1>
 
-  <nav class="hidden md:flex space-x-6">
-    <a href="#" class="hover:underline">Home</a>
-    <a href="#" class="hover:underline">Shop</a>
-    <a href="#" class="hover:underline">About</a>
-    <a href="#" class="hover:underline">Contact</a>
-  </nav>
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="#" class="hover:underline">Home</a>
+          <a href="#" class="hover:underline">Shop</a>
+          <a href="#" class="hover:underline">About</a>
+          <a href="#" class="hover:underline">Contact</a>
+        </nav>
 
-  <button id="nav-toggle" class="md:hidden flex flex-col space-y-1 focus:outline-none" aria-label="Toggle menu">
-    <span class="block w-6 h-0.5 bg-white"></span>
-    <span class="block w-6 h-0.5 bg-white"></span>
-    <span class="block w-6 h-0.5 bg-white"></span>
-  </button>
+        <!-- Hamburger Button -->
+        <button class="md:hidden" onclick="toggleMenu()">
+          <svg class="w-6 h-6 fill-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
-  <nav id="mobile-menu" class="absolute top-full right-0 mt-2 w-40 bg-zinc-900 rounded-md shadow-lg p-4 space-y-4 text-white hidden md:hidden z-10">
-    <a href="#" class="block hover:underline">Home</a>
-    <a href="#" class="block hover:underline">Shop</a>
-    <a href="#" class="block hover:underline">About</a>
-    <a href="#" class="block hover:underline">Contact</a>
-  </nav>
-</header>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+        <a href="#" class="block hover:underline">Home</a>
+        <a href="#" class="block hover:underline">Shop</a>
+        <a href="#" class="block hover:underline">About</a>
+        <a href="#" class="block hover:underline">Contact</a>
+      </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="h-[80vh] flex flex-col items-center justify-center text-center px-4">
-      <h2 class="text-4xl md:text-6xl font-extrabold tracking-wide">Born in Fire.</h2>
-      <p class="mt-4 text-lg text-gray-300 max-w-xl">PURA LUMBRE is more than clothing — it's a statement. Crafted in heat. Worn in defiance.</p>
+      <h2 class="text-4xl md:text-6xl font-extrabold tracking-wide">Born in Fire</h2>
+      <p class="mt-4 text-lg text-gray-300 max-w-xl">
+        PURA LUMBRE is more than clothing — it's a statement. Crafted in heat. Worn in defiance.
+      </p>
       <button class="mt-6 px-6 py-3 border border-white hover:bg-white hover:text-black transition">Shop Now</button>
     </section>
 
-    <!-- Product Grid -->
-    <section class="px-6 py-12">
-      <h3 class="text-3xl font-semibold mb-8">Featured Drops</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Product Card -->
-        <div class="bg-zinc-900 rounded-xl overflow-hidden hover:scale-[1.02] transition">
-          <img src="https://via.placeholder.com/400x400?text=Product+1" alt="Product 1" class="w-full h-64 object-cover" />
-          <div class="p-4">
-            <h4 class="text-lg font-semibold">Flame Hoodie</h4>
-            <p class="text-sm text-gray-400">$65.00</p>
-          </div>
-        </div>
-
-        <div class="bg-zinc-900 rounded-xl overflow-hidden hover:scale-[1.02] transition">
-          <img src="https://via.placeholder.com/400x400?text=Product+2" alt="Product 2" class="w-full h-64 object-cover" />
-          <div class="p-4">
-            <h4 class="text-lg font-semibold">Ash T-Shirt</h4>
-            <p class="text-sm text-gray-400">$35.00</p>
-          </div>
-        </div>
-
-        <div class="bg-zinc-900 rounded-xl overflow-hidden hover:scale-[1.02] transition">
-          <img src="https://via.placeholder.com/400x400?text=Product+3" alt="Product 3" class="w-full h-64 object-cover" />
-          <div class="p-4">
-            <h4 class="text-lg font-semibold">Ember Cap</h4>
-            <p class="text-sm text-gray-400">$28.00</p>
-          </div>
+    <!-- Featured Products -->
+    <section class="px-4 py-12">
+      <div class="container mx-auto">
+        <h3 class="text-3xl font-semibold mb-8 text-center">Featured Drops</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="bg-zinc-900 p-6 rounded-xl text-center">Product 1</div>
+          <div class="bg-zinc-900 p-6 rounded-xl text-center">Product 2</div>
+          <div class="bg-zinc-900 p-6 rounded-xl text-center">Product 3</div>
         </div>
       </div>
     </section>
